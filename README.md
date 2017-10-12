@@ -1,3 +1,5 @@
+Orginal credit to: https://github.com/bbatsov
+
 # Prelude
 
 > Role models are important. <br>
@@ -4429,7 +4431,7 @@ Cheers,<br>
 [Bozhidar](https://twitter.com/bbatsov)
 
 [PEP-8]: https://www.python.org/dev/peps/pep-0008/
-[rails-style-guide]: https://github.com/bbatsov/rails-style-guide
+[rails-style-guide]: https://github.lc41.com/tyemill/rails-style-guide
 [pickaxe]: https://pragprog.com/book/ruby4/programming-ruby-1-9-2-0
 [trpl]: http://www.amazon.com/Ruby-Programming-Language-David-Flanagan/dp/0596516177
 [Pandoc]: http://pandoc.org/
