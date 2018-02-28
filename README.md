@@ -1,5 +1,30 @@
 Orginal credit to: https://github.com/bbatsov
 
+# Configuring Rubocop
+
+To setup Rubocop to use the most up to date configs for the current style
+guides:
+
+```yaml
+inherit_from:
+  - https://github.lc41.com/tyemill/ruby-style-guide/blob/master/README.md
+  - https://github.lc41.com/tyemill/ruby-style-guide/blob/master/README.md
+```
+
+This method will cache those files locally and only update under
+[certain circumstances][rubocop-remote-url].
+
+
+To use a local version for testing new configs or because of network issues
+([pointing to the local paths for these files][rubocop-inheriting-configs]):
+
+```yaml
+inherit_from:
+  - ./src/ruby-style-guide/.rubocop.yml
+  - ./src/rails-style-guide/.rubocop.yml
+```
+
+
 # Prelude
 
 > Role models are important. <br>
@@ -572,20 +597,6 @@ Translations of the guide are available in the following languages:
       .four
     ```
 
-  * **(Option B)** When continuing a chained method invocation on another line,
-    include the `.` on the first line to indicate that the
-    expression continues.
-
-    ```ruby
-    # bad - need to read ahead to the second line to know that the chain continues
-    one.two.three
-      .four
-
-    # good - it's immediately clear that the expression continues beyond the first line
-    one.two.three.
-      four
-    ```
-
   A discussion on the merits of both alternative styles can be found
   [here](https://github.com/bbatsov/ruby-style-guide/pull/176).
 
@@ -685,10 +696,10 @@ Translations of the guide are available in the following languages:
   num = 1234
   ```
 
-* <a name="rdoc-conventions"></a>
-    Use [Rdoc][rdoc] and its conventions for API documentation.  Don't put an
+* <a name="yard-conventions"></a>
+    Use [Yard][yard] and its conventions for API documentation.  Don't put an
     empty line between the comment block and the `def`.
-<sup>[[link](#rdoc-conventions)]</sup>
+<sup>[[link](#yard-conventions)]</sup>
 
 * <a name="80-character-limits"></a>
   Limit lines to 80 characters.
@@ -916,7 +927,7 @@ Translations of the guide are available in the following languages:
   Trailing underscore variables are necessary when there is a splat variable
   defined on the left side of the assignment, and the splat variable is
   not an underscore.
-<sup>[[link]](#trailing-underscore-variables)</sup>
+  <sup>[[link]](#trailing-underscore-variables)</sup>
 
   ```ruby
   # bad
@@ -1593,9 +1604,9 @@ condition](#safe-assignment-in-condition).
   ```
 
 * <a name="double-amper-preprocess"></a>
-  Use `&&=` to preprocess variables that may or may not exist. Using `&&=`
+  ~~Use `&&=` to preprocess variables that may or may not exist. Using `&&=`
   will change the value only if it exists, removing the need to check its
-  existence with `if`.
+  existence with `if`.~~
 <sup>[[link](#double-amper-preprocess)]</sup>
 
   ```ruby
@@ -2438,6 +2449,7 @@ no parameters.
   end
   ```
 
+* ZH: NOTE: we may want to change this to  reflect yard styles
 * <a name="todo"></a>
   Use `TODO` to note missing features or functionality that should be added at
   a later date.
@@ -3696,14 +3708,14 @@ resource cleanup when possible.
   ```
 
 * <a name="consistent-string-literals"></a>
-  Adopt a consistent string literal quoting style. There are two popular
+  ~~Adopt a consistent string literal quoting style. There are two popular
   styles in the Ruby community, both of which are considered good&mdash;single
-  quotes by default (Option A) and double quotes by default (Option B).
+  quotes by default (Option A) and double quotes by default (Option B).~~
 <sup>[[link](#consistent-string-literals)]</sup>
 
-  * **(Option A)** Prefer single-quoted strings when you don't need
+  * **(Option A)** ~~Prefer single-quoted strings when you don't need
     string interpolation or special symbols such as `\t`, `\n`, `'`,
-    etc.
+    etc.~~
 
     ```ruby
     # bad
@@ -3717,8 +3729,8 @@ resource cleanup when possible.
     name = "De'Andre"
     ```
 
-  * **(Option B)** Prefer double-quotes unless your string literal
-    contains `"` or escape characters you want to suppress.
+  * **(Option B)** ~~Prefer double-quotes unless your string literal
+    contains `"` or escape characters you want to suppress.~~
 
     ```ruby
     # bad
@@ -4436,4 +4448,6 @@ Cheers,<br>
 [trpl]: http://www.amazon.com/Ruby-Programming-Language-David-Flanagan/dp/0596516177
 [Pandoc]: http://pandoc.org/
 [RuboCop]: https://github.com/bbatsov/rubocop
-[rdoc]: http://rdoc.sourceforge.net/doc/
+[yard]: https://yardoc.org/
+[rubocop-remote-url]: http://rubocop.readthedocs.io/en/latest/configuration/#inheriting-configuration-from-a-remote-url
+[rubocop-inheriting-configs]: http://rubocop.readthedocs.io/en/latest/configuration/#inheriting-from-another-configuration-file-in-the-project
