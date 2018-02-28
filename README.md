@@ -596,7 +596,19 @@ Translations of the guide are available in the following languages:
     one.two.three
       .four
     ```
+  * ~~**(Option B)** When continuing a chained method invocation on another line,
+    include the `.` on the first line to indicate that the
+    expression continues.~~
 
+    ```ruby
+    # bad - need to read ahead to the second line to know that the chain continues
+    one.two.three
+      .four
+
+    # good - it's immediately clear that the expression continues beyond the first line
+    one.two.three.
+      four
+    ```
   A discussion on the merits of both alternative styles can be found
   [here](https://github.com/bbatsov/ruby-style-guide/pull/176).
 
