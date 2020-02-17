@@ -6,9 +6,12 @@ To setup Rubocop to use the most up to date configs for the current style
 guides:
 
 ```yaml
+require:
+  - rubocop-rails
+  - rubocop-performance
 inherit_from:
-  - https://github.lc41.com/tyemill/ruby-style-guide/blob/master/.rubocop.yml
-  - https://github.lc41.com/tyemill/rails-style-guide/blob/master/.rubocop.yml
+  - https://raw.githubusercontent.com/tyemill/ruby-style-guide/master/.rubocop.yml
+  - https://raw.githubusercontent.com/tyemill/rails-style-guide/master/.rubocop.yml
 ```
 
 This method will cache those files locally and only update under
@@ -19,6 +22,9 @@ To use a local version for testing new configs or because of network issues
 ([pointing to the local paths for these files][rubocop-inheriting-configs]):
 
 ```yaml
+require:
+  - rubocop-rails
+  - rubocop-performance
 inherit_from:
   - ./src/ruby-style-guide/.rubocop.yml
   - ./src/rails-style-guide/.rubocop.yml
