@@ -2,3 +2,13 @@ Style/StringLiterals:
   Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: false
+Lint/AmbiguousOperator:
+  # buggy cop
+  Enabled: false
+AllCops:
+  NewCops: disable
+
+require:
+  - rubocop-performance
+  - rubocop-minitest
+  - rubocop-thread_safety
