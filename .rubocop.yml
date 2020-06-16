@@ -5,6 +5,13 @@ Style/FrozenStringLiteralComment:
 Lint/AmbiguousOperator:
   # buggy cop
   Enabled: false
+Layout/LineLength:
+  Max: 120
+Metrics/ClassLength:
+  Exclude:
+    - 'test/**/*_test.rb'
+Style/EmptyMethod:
+  EnforcedStyle: expanded
 AllCops:
   NewCops: disable
 

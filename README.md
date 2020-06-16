@@ -230,12 +230,22 @@ Translations of the guide are available in the following languages:
   end
   ```
 
-  One exception to the rule are empty-body methods.
+  empty-body methods should fall on two lines
+  ```ruby
+  # bad
+  def no_op; end
+
+  # good
+  def no_op
+  end
+  ```
+
+  <!-- One exception to the rule are empty-body methods.
 
   ```ruby
   # good
   def no_op; end
-  ```
+  ``` -->
 
 * <a name="spaces-operators"></a>
   Use spaces around operators, after commas, colons and semicolons.
