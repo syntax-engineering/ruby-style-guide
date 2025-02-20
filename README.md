@@ -23,8 +23,9 @@ To use a local version for testing new configs or because of network issues
 ([pointing to the local paths for these files][rubocop-inheriting-configs]):
 
 ```yaml
+require:
+  - rubocop-minitest
 plugins:
-  - rubocop-rails
   - rubocop-performance
 inherit_from:
   - ./src/ruby-style-guide/.rubocop.yml
