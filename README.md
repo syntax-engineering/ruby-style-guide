@@ -6,8 +6,9 @@ To setup Rubocop to use the most up to date configs for the current style
 guides:
 
 ```yaml
+require:
+  - rubocop-minitest
 plugins:
-  - rubocop-rails
   - rubocop-performance
 inherit_from:
   - https://raw.githubusercontent.com/syntax-engineering/ruby-style-guide/master/.rubocop.yml
