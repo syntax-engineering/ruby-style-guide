@@ -15,6 +15,6 @@ Style/EmptyMethod:
 AllCops:
   NewCops: disable
 
-require:
+plugins:
   - rubocop-performance
   - rubocop-minitest
