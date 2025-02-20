@@ -8,7 +8,6 @@ guides:
 ```yaml
 require:
   - rubocop-minitest
-plugins:
   - rubocop-performance
 inherit_from:
   - https://raw.githubusercontent.com/syntax-engineering/ruby-style-guide/master/.rubocop.yml
@@ -25,7 +24,6 @@ To use a local version for testing new configs or because of network issues
 ```yaml
 require:
   - rubocop-minitest
-plugins:
   - rubocop-performance
 inherit_from:
   - ./src/ruby-style-guide/.rubocop.yml
