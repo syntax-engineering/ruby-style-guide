@@ -17,4 +17,5 @@ AllCops:
 
 require:
   - rubocop-minitest
+plugins:
   - rubocop-performance
