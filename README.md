@@ -6,9 +6,8 @@ To setup Rubocop to use the most up to date configs for the current style
 guides:
 
 ```yaml
-require:
-  - rubocop-minitest
 plugins:
+  - rubocop-minitest
   - rubocop-performance
 inherit_from:
   - https://raw.githubusercontent.com/syntax-engineering/ruby-style-guide/master/.rubocop.yml
@@ -23,9 +22,8 @@ To use a local version for testing new configs or because of network issues
 ([pointing to the local paths for these files][rubocop-inheriting-configs]):
 
 ```yaml
-require:
-  - rubocop-minitest
 plugins:
+  - rubocop-minitest
   - rubocop-performance
 inherit_from:
   - ./src/ruby-style-guide/.rubocop.yml
